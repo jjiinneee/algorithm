@@ -1,16 +1,17 @@
 package com.algorithm.arrayAlgo;
 
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class arEx2 {
     public static void main(String[] args) {
-        Scanner scanner = null;
-        int[] arr = new int[10];
+        HashSet<Integer> hashSet = new HashSet<>();
         
-        for (int i = 0; i < arr.length; i++) {
-//            int[] tesst = scanner.nextInt();
-//            int abcd = test % 24;
-//            System.out.println(abcd);
+        Scanner sca = new Scanner(System.in);
+
+        for (int i = 0; i < 10; i++) {
+            hashSet.add(sca.nextInt() % 42);
         }
+        System.out.println(hashSet.size());
     }
 }
