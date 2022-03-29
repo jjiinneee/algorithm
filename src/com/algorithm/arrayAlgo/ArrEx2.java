@@ -3,7 +3,7 @@ package com.algorithm.arrayAlgo;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class arEx2 {
+public class ArrEx2 {
     public static void main(String[] args) {
         HashSet<Integer> hashSet = new HashSet<>();
         

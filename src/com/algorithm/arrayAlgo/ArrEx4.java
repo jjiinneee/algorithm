@@ -2,7 +2,7 @@ package com.algorithm.arrayAlgo;
 
 import java.util.Scanner;
 
-public class arEx4 {
+public class ArrEx4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
