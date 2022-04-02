@@ -14,6 +14,6 @@ public class Back7568 {
         //키랑 몸무게 담을꺼
         int[][] arr =  new int [num][2];
 
-        String[] str;
+        String[] str ;
     }
 }
