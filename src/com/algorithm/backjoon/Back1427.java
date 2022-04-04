@@ -12,7 +12,7 @@ public class Back1427 {
         Arrays.sort(arr);
 
         for(int i = arr.length -1; i>=0; i--){
-            System.out.println(arr[i]);
+            System.out.print(arr[i]);
         }
 
 
