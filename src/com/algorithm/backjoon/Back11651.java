@@ -17,6 +17,8 @@ public class Back11651 {
             tt[i][1] = Integer.parseInt(x_y[1]);
         }
 
+        //??? tt = int   x_y = String 이여서 String > int로 바꾸려면 Integer.parseInt 맞지않나
+
         Arrays.sort(tt, (x,y) ->{
             if(x[0] == y[0]){
                 return x[1] - y[1];
