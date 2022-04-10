@@ -1,4 +1,6 @@
-package com.algorithm.leetcode;
+package com.algorithm.leetcode.binarytree;
+
+import com.algorithm.leetcode.binarytree.datatype.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,18 +35,5 @@ public class BinaryTreePreorderTraversal {
          List<Integer> result = new BinaryTreePreorderTraversal().preorderTraversal(root1);
 
         System.out.println(result.toString());
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
