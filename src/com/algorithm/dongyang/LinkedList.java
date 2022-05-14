@@ -19,13 +19,13 @@ public class LinkedList {
     list[0].name ="부산";
     list[0].next = -1;
     list[1].name ="대전";
-    list[0].next = 3;
+    list[1].next = 3;
     list[2].name ="서울";
-    list[0].next = 4;
+    list[2].next = 4;
     list[3].name ="동대구";
-    list[0].next = 0;
+    list[3].next = 0;
     list[4].name ="천안아산";
-    list[0].next = 1;
+    list[4].next = 1;
     
     head = 2;
   }
@@ -37,12 +37,23 @@ public class LinkedList {
       idx = list[idx].next;
     }
   
-    System.out.println();
+    System.out.printf("\n");
   }
   
+  
+  public static void insertStationList(int insIdx, String insName, int prevIdx){
+    list[insIdx].name = insName;
+    list[insIdx].next =  list[prevIdx].next;
+    list[prevIdx].next = insIdx;
+  }
   public static void main(String[] args) {
     initStationList();
-//    printStationList();
+    printStationList();
+    
+    //연결 리스트에 요소를 삽입
+    
+    insertStationList(5, "광명",2);
+    printStationList();
   }
   
 }
