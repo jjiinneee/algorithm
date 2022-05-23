@@ -1,5 +1,7 @@
 package com.algorithm.su_t;
 
+import java.util.Stack;
+
 public class ValidParentheses {
   public boolean isValid(String s) {
     //{} [] () 각자 짝이 있네?
@@ -8,7 +10,31 @@ public class ValidParentheses {
     }
     
     //s...
-    return false;
+    Stack<Character> stack = new Stack<Character>();
+    for (int i = 0; i < s.length(); i++) {
+      switch (s.charAt(i)){
+        case ')' :
+            if(stack.peek() == '('){
+              stack.pop();
+            }
+          break;
+        case '}' :
+          if(stack.peek() == '{'){
+            stack.pop();
+          }
+          break;
+        case ']' :
+          if(stack.peek() == '['){
+            stack.pop();
+          }
+          break;
+        default:
+          stack.push(s.charAt(i));
+          break;
+      }
+    }
+    return stack.empty();
+//    return false;
   }
   
   
