@@ -39,10 +39,8 @@ public class BigNumber {
     int sameNum = sc.nextInt();
     int cnt = 0;
     for (int i = 1; i <= plusNum; i++) {
-      if(i == sameNum){
-        cnt = first * sameNum;
-      }
-     cnt += second;
+      
+   
      
     }
   
