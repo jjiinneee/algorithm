@@ -1,4 +1,4 @@
-package com.algorithm.su_t;
+package com.algorithm.hong_t;
 
 public class SuhongProblem {
 //  12345
