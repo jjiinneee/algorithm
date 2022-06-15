@@ -28,10 +28,11 @@ public class CardGame {
         if(minOfRow > maxNum){
           maxNum = minOfRow;
         }
-        
+
       }
-      
+
       return maxNum;
+      
     }
     
     public static void main(String[] args) {
