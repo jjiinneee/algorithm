@@ -94,8 +94,52 @@ public class LinkedList {
     }
     
     
+    if(head.link == null){
+      head = null;
+    }else{
+      preNode = head;
+      tempNode= head.link;
+  
+  
+      while(tempNode.link != null){
+        preNode = tempNode;
+        tempNode = tempNode.link;
+      }
+      preNode.link = null;
+      
+    }
+  }
+  
+  //탐색
+  public ListNode searchNode(String data){
+    ListNode tempNode = this.head;
     
+    while(tempNode !=null){
+      if(data.equals(tempNode.getData())){
+        return tempNode;
+      }else{
+        tempNode = tempNode.link;
+      }
+    }
+    
+    return tempNode;
+  }
+  
+  public void reverseList(){
+    ListNode nextNode = head;
+    ListNode currentNode = null;
+    ListNode preNode = null;
+    
+    if(nextNode != null){
+      preNode = currentNode;
+      currentNode = nextNode;
+      nextNode = nextNode.link;
+      currentNode.link = preNode;
+    }
+    head = currentNode;
   }
 }
 
-
+// https://freestrokes.tistory.com/84
+// https://st-lab.tistory.com/167
+// https://www.neya.kr/123
