@@ -48,12 +48,13 @@ public class LinkedList {
     ListNode newNode = new ListNode(data);
     if(head == null){
       this.head = newNode;
+    }else{
+      ListNode tempNode = head;
+      while(tempNode.link !=null){
+        tempNode = tempNode.link;
+      }
+      tempNode.link = newNode;
     }
-    ListNode tempNode = head;
-    while(tempNode.link !=null){
-      tempNode = tempNode.link;
-    }
-    tempNode.link = newNode;
   }
   
   //중간 노드 삭제
@@ -137,6 +138,46 @@ public class LinkedList {
       currentNode.link = preNode;
     }
     head = currentNode;
+  }
+  
+  //연결 리스트에 저장된 모든 데이터 출력
+  public void printList(){
+    ListNode tempNode  = this.head;
+    
+    while(tempNode !=null){
+      System.out.println(tempNode.getData() + " ");
+      tempNode = tempNode.link;
+    }
+    System.out.println();
+  }
+  
+  public static void main(String[] args) {
+    //연결 리스트 생성
+    LinkedList list  = new LinkedList();
+    String str = "sat";
+    
+    list.insertLastNode("mon");
+    list.insertLastNode("tue");
+    list.insertLastNode("wed");
+    list.insertLastNode("thu");
+    list.insertLastNode("fri");
+    list.insertLastNode("sat");
+    list.insertLastNode("sun");
+    list.printList();
+  
+    System.out.println("str" + str);
+    //System.out.println(list.searchNode(str).getData());
+    
+    list.deleteMiddleNode(list.searchNode(str).getData());
+    list.printList();
+    
+    
+    str = "sun";
+    list.deleteMiddleNode(list.searchNode(str).getData());
+    list.printList();
+    
+    list.reverseList();
+    list.printList();
   }
 }
 
