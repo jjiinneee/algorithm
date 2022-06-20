@@ -1,7 +1,5 @@
-package com.algorithm.grammar.LinkedList;
+package com.algorithm.grammar.linkedList;
 
-
-import java.util.List;
 
 class ListNode {
   private String data;  //데이터 저장 변수
