@@ -8,12 +8,16 @@ public class AdventurerGuild {
     int count  = 0; // 총 그룹 갯수
     Arrays.sort(members);
     //정렬하니까 맨끝의 값이 젤 큰거
-    int localMax = 0; // 그룹 내 제일 겁쟁이
+   // int localMax = 0; // 그룹 내 제일 겁쟁이
     int size = 0; // 그룹 인원수
     for (int i = 0; i < members.length; i++) {
-      localMax = members[i];
+     
+     //localMax = members[i];
+    //  System.out.println("localMa : " + localMax);
       size++;
-      if (size >= localMax) {
+      
+      if (size >= members[i]) {
+        System.out.println("members[i] : " + members[i]);
         System.out.println("그룹 결성");
         count++;
         size = 0;
