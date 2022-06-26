@@ -13,46 +13,38 @@ public class NewID {
 //          7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
   
   public String solution(String new_id) {
-    String pattern = "[^a-zA-Z0-9\\d\\-_.]*";
-    String answer = "";
-    int length = new_id.length();
-    System.out.println(new_id.substring(0,15));
+    String pattern = "[^-_.a-z0-9]";
+    String answer;
     
-    if(new_id.length() > 16){
-      answer = new_id.substring(0,15);
+    
+    //정규식 ^ : 텍스트의 시작 / $ : 텍스트의 끝
+      answer = new_id.toLowerCase();  // 1
+      answer = answer.replaceAll("[^-_.a-z0-9]", "");  //2
+      answer = answer.replaceAll("[.]{2,}", ".");   //3
+      answer = answer.replaceAll("^[.]|[.]$","");  //4
+      if(answer.equals("")){
+        answer = "a";        //5
+      }
+      if(answer.length() >= 16){
+        answer = answer.substring(0,15);
+        answer = answer.replaceAll("^[.]|[.]$","");     //6
+      }
+
+      if(answer.length() <=2){
+        while(answer.length() < 3){
+          answer += answer.charAt(answer.length() - 1);
+        }
+      }
       
-    }
-    
-//    if(new_id == null){
-//      answer = "a";  //5
-//    }else{
-//      answer = new_id.toLowerCase();  // 1
-//      answer = answer.replaceAll(pattern, "");  //2
-//      answer = answer.replaceAll("[.]{2,}",".");   //3
-//
-//    }
-  
-  
-    
-   
-   // if(new_id.charAt(0) == '.' || )
-//    answer = new_id.toLowerCase();  // 1
-//    answer = answer.replaceAll(pattern, "");  //2
-//    answer = answer.replaceAll("[.]{2,}",".");
-    
-    
+      
+        
     return answer;
   }
   
   public static void main(String[] args) {
     NewID n = new NewID();
     String new_id = "...!@BaT#*..y.abcdefghijklm.";
- //   System.out.println(new_id.substring(15));
-//    for (int i = 0; i < new_id.length(); i++) {
-//       if(new_id.charAt( ){
-//      System.out.println("23423423432434" +new_id.replace(new_id.charAt(0), '.'));
-//       }
-//    }
+    //String new_id = "=.=";
     System.out.println(n.solution(new_id));
   }
 }
