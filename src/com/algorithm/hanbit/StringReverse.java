@@ -34,7 +34,7 @@ public class StringReverse {
   
   public static void main(String[] args) {
     StringReverse s = new StringReverse();
-    String number = "0001100";
+    String number = "1110011";
     System.out.println(s.reverse(number));
   }
 }

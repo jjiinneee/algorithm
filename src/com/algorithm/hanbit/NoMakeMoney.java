@@ -9,13 +9,15 @@ public class NoMakeMoney {
   public int makeMoney(int num,int[] money){
     int sum = 1;
   
-   
+    Arrays.sort(money);
+    //1 1 2 3 9
     for (int i = 0; i < num; i++) {
-        if(sum < money[i]){
-          break;
-        }else{
-          sum+= money[i];
-        }
+     if(sum < money[i]){
+       break;
+     }else{
+       sum+= money[i];
+       System.out.println("sum"+sum);
+     }
     }
     return sum;
   }
