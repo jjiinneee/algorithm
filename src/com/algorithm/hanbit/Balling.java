@@ -5,17 +5,24 @@ import java.util.Map;
 
 public class Balling {
   
-  public int ball(int[] arr){
-  
+  public int ball(int[] balls){
+    int ballCount = balls.length;
     Map<Integer,Integer> temp =   new HashMap<Integer, Integer>();
-    temp.put(1,1);
-    temp.put(2,3);
-    temp.put(3,2);
-    temp.put(4,3);
-    temp.put(5,2);
+    for (int weight: balls) {
+      Integer weightCount = temp.get(weight);
+      if (weightCount != null) {
+        temp.put(weight,weightCount + 1);
+      } else {
+        temp.put(weight, 1);
+      }
+    }
     
+    int cases = 0;
+    for (int count : temp.values()) {
+      cases += count * (ballCount - count);
+    }
     
-    return 0;
+    return cases/2;
   }
   public static void main(String[] args) {
     Balling b = new Balling();
