@@ -7,11 +7,17 @@ import java.util.Set;
 public class GetReport {
     public int[] solution(String[] users, String[] reports, int k) {
         Set<String> reportSet = new HashSet<>();
+        //
+        
         for (String report : reports) {
             reportSet.add(report);
         }
+       
         String[] newReports = new String[reportSet.size()];
+        System.out.println("newReports" +  reportSet.size());
         reportSet.toArray(newReports);
+    
+        
         int[] answer = new int[users.length];
         int[] reportCount = new int[users.length];
         for (int i = 0; i < users.length; i++) {
@@ -52,6 +58,8 @@ public class GetReport {
     1. reports 를 읽고 k번 이상 신고당한 유저 특정
     2. reports를 읽으면서 1에서 특정한 유저를 신고한 유저에게 메일 보냄
     3. 각 유저가 메일 받은 횟수 저장해서 결과 반환
+    users 같은 아이디 중복해서 들어가 있지 않음
+    
     */
 
 
