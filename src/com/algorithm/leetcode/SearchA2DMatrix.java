@@ -4,17 +4,37 @@ public class SearchA2DMatrix {
   public boolean searchMatrix(int[][] matrix, int target) {
     
     //전체 탐색
+//    for (int i = 0; i < matrix.length; i++) {
+//      for (int j = 0; j < matrix[i].length; j++) {
+//        if (matrix[i][j] ==  target){
+//          return true;
+//        }
+//      }
+//    }
+//
+    
+    //값이 정렬되어 있기 때문에 이진탐색을 사용해도됨!
+    int[] arr = new int [matrix.length * matrix[0].length];
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix[i].length; j++) {
-        if (matrix[i][j] ==  target){
-          return true;
-        }
+        arr[matrix[i].length *i  +j] = matrix[i][j];
       }
     }
     
+    int start = 0;
+    int end = arr.length;
+    int mid = (start + end)/2;
     
-    //값이 정렬되어 있기 때문에 이진탐색을 사용해도됨!
-   // int start = 0
+    while(start < end){
+      if(arr[mid] < target){
+        start = mid+1;
+      }else if(arr[mid] >  target){
+        end = mid;
+      }else{
+        return  true;
+      }
+      mid = (start + end) /2;
+    }
     return false;
   }
   
