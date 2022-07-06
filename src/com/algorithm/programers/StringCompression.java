@@ -5,39 +5,38 @@ public class StringCompression {
     //초기화
     int answer = s.length();
   
+    // 조건이 1~1000 까지임 그럼 반절나눠서 해도된다!!라는 전제가 주어짐
+    for (int i = 0; i < s.length() / 2 +1; i++) {
+      String compressed = "";
+      String prev = s.substring(0,i);   //앞에서 부터 i만큼 문자열 추출
+      int cnt = 1;
   
-    for (int i = 1; i < s.length()/2 ; i++) {
-      String target = s.substring(0,i);
-      String cur = "";
-      int cnt =1;
-      StringBuilder sb = new StringBuilder();
-  
-      for (int start = i; start <= s.length(); start+=i) {
-        if(start + i >= s.length()){
-          cur = s.substring(start, s.length());
-        }else{
-          cur = s.substring(start, start+i);
+      //i 단위만큼 증가시키며 이전 문자열과 비교
+      for (int j = i; j < s.length() ; j += i) {
+          //이전상태와 동이랗면 cnt 증가
+        String sub = "";
+        for (int k = j; k < j+i; k++) {
+          if(k<s.length()){
+            sub+=s.charAt(k);
+          }
         }
-        
-        if(cur.equals(target)){
-          cnt++;
-        }else if(cnt == 1){
-          sb.append(target);
-          target = cur;
+        if(prev.equals(sub)){
+          cnt +=1;
         }else{
-          sb.append(cnt).append(target);
-          target = cur;
+          compressed += (cnt >= 2) ? cnt + prev : prev;
+          sub = "";
+          for (int k = j; k < j+i; k++) {
+            if(k<s.length()){
+              sub+=s.charAt(k);
+            }
+          }
+          prev = sub;
           cnt = 1;
         }
       }
-      
-      if(i != target.length()){
-        sb.append(target);
-        answer = Math.min(answer, sb.toString().length());
-      }
+      compressed += (cnt >= 2)? cnt +prev : prev;
+      answer = Math.min(answer, compressed.length());
     }
-  
-  
     return answer;
   }
   
