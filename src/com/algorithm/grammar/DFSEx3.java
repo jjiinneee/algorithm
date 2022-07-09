@@ -6,7 +6,7 @@ public class DFSEx3 {
   
   public static boolean[] vistied = new boolean[9];
   public static ArrayList<ArrayList<Integer>>  graph = new ArrayList<ArrayList<Integer>>();
-  
+  //스택,재귀함수
   public static void dfs(int x){
     vistied[x] = true;
     System.out.println(x + " ");

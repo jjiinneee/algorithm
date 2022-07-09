@@ -9,7 +9,7 @@ public class BFSEx {
   public static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
   
   //BFS 함수 정의
-  //너비 우선 순위 맨 처음
+  //너비 우선 순위 맨 처음(큐), 큐 자료구조 이요
   public static void bfs(int start){
     Queue<Integer>  queue = new LinkedList<>();
     //맨처음 값 넣어
