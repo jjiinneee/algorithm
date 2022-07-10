@@ -16,7 +16,7 @@ public class Balling {
         temp.put(weight, 1);
       }
     }
-    요
+    
     int cases = 0;
     for (int count : temp.values()) {
       cases += count * (ballCount - count);
