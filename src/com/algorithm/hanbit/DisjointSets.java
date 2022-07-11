@@ -12,5 +12,11 @@ public class DisjointSets {
     return findParent(parent[x]);
   }
   
-  //
+  // 두 원소가 속한 집합을 합치기
+  public static void unionParent(int a, int b) {
+    a = findParent(a);
+    b = findParent(b);
+    if (a < b) parent[b] = a;
+    else parent[a] = b;
+  }
 }
