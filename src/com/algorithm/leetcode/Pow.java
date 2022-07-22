@@ -28,8 +28,8 @@ public class Pow {
   
   public static void main(String[] args) {
     Pow  p = new Pow();
-    int n = 3;
-    double x = 2.10000;
+    int n = 2;
+    double x = 2;
   
     System.out.println(p.myPow(x,n));
   }
