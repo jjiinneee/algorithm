@@ -16,17 +16,21 @@ public class Balling {
         temp.put(weight, 1);
       }
     }
-    
+
     int cases = 0;
     for (int count : temp.values()) {
       cases += count * (ballCount - count);
     }
-    
+
     return cases/2;
   }
+  
   public static void main(String[] args) {
     Balling b = new Balling();
+    int firstBall = 5;
+    int weight = 3;
     int[] arr = {1,3,2,3,2};
+    //System.out.println(b.selBall(firstBall, weight,arr));
     System.out.println(b.ball(arr));
   }
 }
