@@ -6,9 +6,10 @@ public class StringCompression {
     int answer = s.length();
   
     // 조건이 1~1000 까지임 그럼 반절나눠서 해도된다!!라는 전제가 주어짐
-    for (int i = 0; i < s.length() / 2 +1; i++) {
+    for (int i = 1; i < s.length() / 2 ; i++) {
       String compressed = "";
       String prev = s.substring(0,i);   //앞에서 부터 i만큼 문자열 추출
+      System.out.println("prev"  +  prev);
       int cnt = 1;
   
       //i 단위만큼 증가시키며 이전 문자열과 비교
@@ -42,7 +43,8 @@ public class StringCompression {
   
   public static void main(String[] args) {
     StringCompression s = new StringCompression();
-    String str = "xababcdcdababcdcd";
+     String str = "xababcdcdababcdcd";
+   // String str = "aabbaccc";
     System.out.println(s.solution(str));
   }
 }

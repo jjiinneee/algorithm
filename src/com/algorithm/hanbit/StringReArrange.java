@@ -17,6 +17,10 @@ public class StringReArrange {
      }
     }
     Collections.sort(list);
+    
+    if(value !=0){
+      System.out.println(value);
+    }
     return String.valueOf(list);
   }
   
