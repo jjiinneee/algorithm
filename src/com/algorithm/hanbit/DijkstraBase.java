@@ -91,10 +91,11 @@ public class DijkstraBase{
     
     
     //모든 간선 정보를 입력받기
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i <= m; i++) {
       int a = sc.nextInt();
       int b = sc.nextInt();
       int c = sc.nextInt();
+    
       
       //a번 노드에서 b번 노드로 가는 비용이 c라는 의미
       graph.get(a).add(new Node(b,c));
