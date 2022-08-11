@@ -5,16 +5,17 @@ import java.util.LinkedList;
 public class SectionSum {
   
   public int sum(int[] data, int left, int right){
-    LinkedList<Integer> linkedList = new LinkedList<>();
     int sum_value = 0;
     
-    //int result = 0;
+    int[] perfiex_sum = new int[data.length];
     for (int i = 0; i < data.length; i++) {
       sum_value+=i;
-      linkedList.push(sum_value);
+      
+      perfiex_sum[i] += sum_value;
     }
-    System.out.println(linkedList);
-    return linkedList.get(right) - linkedList.get(left - 1);
+
+    
+    return perfiex_sum[right] - perfiex_sum[left-1];
   }
   
   public static void main(String[] args) {
