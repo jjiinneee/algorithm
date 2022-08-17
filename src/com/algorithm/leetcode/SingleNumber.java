@@ -7,6 +7,9 @@ public class SingleNumber {
   public int singleNum(int[] nums){
     Arrays.sort(nums);
     int answer = 0;
+    if(nums.length == 1 || nums.length < 0){
+      return 1;
+    }
     for (int i = 0; i < nums.length-1; i+=2) {
       if(nums[i] != nums[i+1]){
         answer = nums[i];
@@ -21,7 +24,7 @@ public class SingleNumber {
   public static void main(String[] args) {
     SingleNumber s = new SingleNumber();
 //    int[] nums = {4,1,2,1,2};
-    int[] nums = {2,2,1};
+    int[] nums = {-1};
     System.out.println(s.singleNum(nums));
   }
 }
