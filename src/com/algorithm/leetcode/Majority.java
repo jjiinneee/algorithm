@@ -1,23 +1,36 @@
 package com.algorithm.leetcode;
 
-import java.util.HashMap;
+import java.util.Arrays;
+
 
 public class Majority {
   public int majorityElement(int[] nums) {
-    int result = 1;
-    for (int i = 0; i < nums.length; i++) {
-      if(nums[i] == nums[0]){
-        result++;
+    int maxCount = 0;
+    int count = 0;
+    int element = 0;
+  
+    Arrays.sort(nums);
+  
+    if(nums.length == 1){
+      return nums[0];
+    }
+  
+    for(int i = 0 ; i < nums.length-1 ; i++){
+      if (nums[i] == nums[i+1]){
+        count++;
+        if(count >= nums.length/2){
+          return nums[i];
+        }
       }else{
-        result--;
-      }
-      if(nums[0] == 0){
-        nums[0] = nums[i+1];
-        result = 1;
-        i++;
+        if (maxCount < count){
+          maxCount = count;
+          count = 1;
+          element = nums[i];
+        }
       }
     }
-    return nums[0];
+  
+    return element;
   }
   
   
