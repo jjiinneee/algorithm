@@ -6,9 +6,9 @@ public class Pow {
     double result = 1;
     
 //    if(n < 0){
-//      return Math.pow(1/x,-n);
+//      return Math.Squared(1/x,-n);
 //    }else{
-//      return Math.pow(x,n);
+//      return Math.Squared(x,n);
 //    }
 
     if(x == 0){

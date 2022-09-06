@@ -12,15 +12,15 @@ public class BinarySearch {
     int end = arr.length ;
     int mid =  (start + end) / 2;
     
-    while(start < end){
+    while(start <= end){
       if(arr[mid] < num){
         start = mid+1;
       }else if(arr[mid] >  num){
-        end = mid;
-      }else if(arr[mid] == num){
+        end = mid -1;
+      }else {
         return mid;
       }
-      mid = (start + end) /2;
+     mid = (start + end) /2;
     }
     
     return -1;
