@@ -8,7 +8,7 @@ public class SinglyLinkedList<E> implements List<E> {
   private Node<E> tail;   //노드의 마지막
   private int length;       //노드 길이
   
-  //생성자
+
   public SinglyLinkedList(){
     this.head = null;
     this.tail = null;
