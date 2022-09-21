@@ -17,16 +17,22 @@ public class StringReArrange {
      }
     }
     Collections.sort(list);
+  
+    for (int i = 0; i < list.size(); i++) {
+      System.out.println(list.get(i));
+    }
     
     if(value !=0){
       System.out.println(value);
     }
-    return String.valueOf(list);
+    
+    return "";
+  //  return String.valueOf(list);
   }
   
   public static void main(String[] args) {
     StringReArrange s = new StringReArrange();
-    String str = "K1KA5CB7";
+    String str = "AJKDLSI412K4JSJ9D";
     System.out.println(s.ReArragement(str));
   }
 }

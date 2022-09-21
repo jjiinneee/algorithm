@@ -6,45 +6,35 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class BigNumber {
-  
-  
+  public int solution(int[] num){
+    int n = 5;
+    int m = 8;
+    int k = 3;
+    
+    Arrays.sort(num);
+    int first = num[n-1];
+    int second = num[n-2];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //가장 큰 수가 더해지는 횟수 계산
+    int cnt = (m / (k+1)) * k;
+    cnt+= m % (k+1);
+    int result = 0;
+    result += cnt * first;
+    result += (m - cnt) * second;
+    return result;
+  }
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    
-    
-    //숫자입력받고
-    int num = sc.nextInt();
-    
-    //받은 숫자 넣을 배열선언
-    int[] nums = new int[num];
-  
-    
-    //숫자만큼 돌면서 받은 숫자 nums에 넣음
-    int maxNum = Integer.MIN_VALUE;
-    for (int i = 0; i < num; i++) {
-      nums[i] = sc.nextInt();
-//      if(nums[i] > maxNum){
-//        maxNum = nums[i];
-//      }
-    }
-    Arrays.sort(nums);
-    int first = nums[nums.length -1];
-    int second = nums[nums.length -2];
-    System.out.println("Maximum number = " + first);
-    System.out.println("Maximum number = " + second);
-    
-    //8번 더할거
-    int plusNum = sc.nextInt();
-    //같은 수 3번만 더해
-    int sameNum = sc.nextInt();
-    int cnt = 0;
-    for (int i = 1; i <= plusNum; i++) {
-      
-   
-     
-    }
-  
-  
-    System.out.println(cnt);
+    BigNumber b = new BigNumber();
+    int[] num = {2,4,5,4,6};
+    System.out.println(b.solution(num));
   }
 }
